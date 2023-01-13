@@ -103,6 +103,10 @@ model.add(Dropout(0.3))
 model.add(Dense(units=10, 
                 kernel_initializer='normal', 
                 activation='softmax'))
+
+#顯示模型
+model.summary() 
+
 #定義訓練方式
 model.compile(loss='categorical_crossentropy', 
               optimizer='adam', metrics=['accuracy'])
@@ -137,5 +141,3 @@ print("\n",pd.crosstab(test_label,prediction,rownames=['actual label'],colnames=
 #顯示precision, recall, f1-score
 print('classification')
 print(classification_report(test_label,prediction))
-
-
